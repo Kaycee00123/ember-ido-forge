@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -233,7 +232,7 @@ const IDODetail = () => {
                     <span>Progress</span>
                     <span>{progress.toFixed(2)}%</span>
                   </div>
-                  <Progress value={progress} className="h-2 bg-secondary" indicatorClassName="bg-orange-500" />
+                  <Progress value={progress} className="h-2 bg-secondary" />
                   
                   <div className="flex justify-between mt-2">
                     <span className="text-sm text-gray-400">
