@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faRocket,
+  faUsers,
+  faCalendar,
+  faCoins,
+  faChartLine,
   faGlobe,
   faFileAlt,
-  faChartLine,
-  faUsers,
-  faClock,
-  faCalendar,
-  faMoneyBill,
   faWallet,
-  faExchangeAlt
+  faExchangeAlt,
+  faEdit
 } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Input } from '@/components/ui/input';
 
 // Mock IDO data
 const mockIDO = {
@@ -106,6 +105,9 @@ const IDODetail = () => {
     setEstimatedTokens(mockIDO.maxAllocation / mockIDO.price);
   };
 
+  // Mock data - in a real application this would come from API or blockchain
+  const isCreator = true; // Mock check if the current user is the creator
+  
   return (
     <Layout>
       {/* Banner */}
@@ -120,7 +122,25 @@ const IDODetail = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
       </div>
       
-      <div className="container mx-auto px-4 -mt-20 relative z-10">
+      <div className="container mx-auto px-4 py-10">
+        <div className="mb-6 flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold">{mockIDO.name}</h1>
+            <p className="text-gray-400 text-sm mt-1">
+              {shortenAddress(address || '')}
+            </p>
+          </div>
+          
+          {isCreator && (
+            <Button variant="outline" asChild>
+              <Link to={`/edit/${address}`} className="flex items-center gap-2">
+                <FontAwesomeIcon icon={faEdit} />
+                Edit IDO
+              </Link>
+            </Button>
+          )}
+        </div>
+        
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left column - IDO details */}
           <div className="w-full md:w-2/3 space-y-6">

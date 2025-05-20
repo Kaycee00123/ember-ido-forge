@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import IDOsList from "./pages/IDOsList";
 import IDODetail from "./pages/IDODetail";
 import CreateIDO from "./pages/CreateIDO";
+import EditIDO from "./pages/EditIDO";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
@@ -34,7 +35,8 @@ import {
   faLock,
   faUnlock,
   faShield,
-  faCircle
+  faCircle,
+  faEdit
 } from '@fortawesome/free-solid-svg-icons';
 
 // Import brand icons
@@ -68,6 +70,7 @@ library.add(
   faUnlock,
   faShield,
   faCircle,
+  faEdit,
   // Brand icons
   faTwitter,
   faDiscord,
@@ -88,6 +91,7 @@ const App = () => (
           <Route path="/idos" element={<IDOsList />} />
           <Route path="/ido/:address" element={<IDODetail />} />
           <Route path="/create" element={<CreateIDO />} />
+          <Route path="/edit/:address" element={<EditIDO />} />
           <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
