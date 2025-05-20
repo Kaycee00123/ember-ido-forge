@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 
 // Import FontAwesome core
 import { library } from '@fortawesome/fontawesome-svg-core';
+// Import solid icons
 import { 
   faRocket, 
   faChartLine, 
@@ -30,18 +31,23 @@ import {
   faCalendar,
   faBars,
   faTimes,
-  faTwitter,
-  faDiscord,
-  faTelegram,
-  faMedium,
   faLock,
   faUnlock,
   faShield,
   faCircle
 } from '@fortawesome/free-solid-svg-icons';
 
+// Import brand icons
+import {
+  faTwitter,
+  faDiscord,
+  faTelegram,
+  faMedium
+} from '@fortawesome/free-brands-svg-icons';
+
 // Add FontAwesome icons to the library
 library.add(
+  // Solid icons
   faRocket, 
   faChartLine, 
   faUsers, 
@@ -58,14 +64,15 @@ library.add(
   faCalendar,
   faBars,
   faTimes,
-  faTwitter,
-  faDiscord,
-  faTelegram,
-  faMedium,
   faLock,
   faUnlock,
   faShield,
-  faCircle
+  faCircle,
+  // Brand icons
+  faTwitter,
+  faDiscord,
+  faTelegram,
+  faMedium
 );
 
 const queryClient = new QueryClient();

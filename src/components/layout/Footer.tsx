@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faDiscord, faTelegram, faMedium } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faDiscord, faTelegram, faMedium } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

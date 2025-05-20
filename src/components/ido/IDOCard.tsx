@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -112,7 +111,7 @@ export const IDOCard: React.FC<IDOCardProps> = ({ project, highlighted }) => {
               <span>Progress</span>
               <span>{progress.toFixed(2)}%</span>
             </div>
-            <Progress value={progress} className="h-2 bg-secondary" />
+            <Progress value={progress} className="h-2 bg-secondary" indicatorClassName="bg-orange-500" />
           </div>
           
           <div className="grid grid-cols-2 gap-4">

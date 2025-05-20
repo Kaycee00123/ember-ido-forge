@@ -14,6 +14,7 @@ import {
   faWallet,
   faExchangeAlt
 } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
@@ -232,7 +233,7 @@ const IDODetail = () => {
                     <span>Progress</span>
                     <span>{progress.toFixed(2)}%</span>
                   </div>
-                  <Progress value={progress} className="h-2 bg-secondary" />
+                  <Progress value={progress} className="h-2 bg-secondary" indicatorClassName="bg-orange-500" />
                   
                   <div className="flex justify-between mt-2">
                     <span className="text-sm text-gray-400">
