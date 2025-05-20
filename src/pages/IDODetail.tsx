@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -12,13 +13,16 @@ import {
   faFileAlt,
   faWallet,
   faExchangeAlt,
-  faEdit
+  faEdit,
+  faClock
 } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Input } from '@/components/ui/input';
+import { shortenAddress } from '@/lib/utils';
 
 // Mock IDO data
 const mockIDO = {
@@ -171,11 +175,11 @@ const IDODetail = () => {
                       Whitepaper
                     </a>
                     <a href={mockIDO.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500">
-                      <FontAwesomeIcon icon={faRocket} className="mr-1" />
+                      <FontAwesomeIcon icon={faTwitter} className="mr-1" />
                       Twitter
                     </a>
                     <a href={mockIDO.telegram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500">
-                      <FontAwesomeIcon icon={faRocket} className="mr-1" />
+                      <FontAwesomeIcon icon={faTelegram} className="mr-1" />
                       Telegram
                     </a>
                   </div>
@@ -253,7 +257,7 @@ const IDODetail = () => {
                     <span>Progress</span>
                     <span>{progress.toFixed(2)}%</span>
                   </div>
-                  <Progress value={progress} className="h-2 bg-secondary" indicatorClassName="bg-orange-500" />
+                  <Progress value={progress} className="h-2 bg-secondary" />
                   
                   <div className="flex justify-between mt-2">
                     <span className="text-sm text-gray-400">
